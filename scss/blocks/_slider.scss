@@ -1,0 +1,26 @@
+@use '../media';
+@use '../variables';
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-orange-quaternary);
+  @include media.medium-desktop {
+    &::after {
+      font-size: 4.5rem;
+    }
+  }
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--color-yellow-darker);
+}
+.swiper-scrollbar {
+  background-color: var(--color-yellow-light);
+}
+.custom-scrollbar-drag {
+  background-color: var(--color-yellow-dark) !important;
+}
+.swiper-pagination-bullet {
+  background-color: var(--color-orange-tertiary);
+  width: 11px;
+  height: 11px;
+}

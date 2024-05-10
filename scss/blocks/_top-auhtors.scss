@@ -1,0 +1,108 @@
+@use '../variables';
+@use '../media';
+@use '../mixins';
+.top-authors {
+  grid-column: 2/ -1;
+  grid-row: 1 / 2;
+  padding-left: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 1rem;
+  @include mixins.rounded-box;
+  // &__list {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   gap: 2rem;
+  //   // margin-left: 2rem;
+  //   flex-wrap: nowrap; /* Отменяет перенос элементов на новую строку */
+  //   // overflow-x: auto; /* Добавляет горизонтальную прокрутку, если элементов больше, чем помещается */
+  // }
+
+  &__author {
+    font-family: 'Quattrocento', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 3px;
+    min-width: 25rem;
+    max-width: 30rem;
+    max-height: 15rem;
+    width: 100%;
+    color: var(--color-black-2);
+    text-align: left;
+    line-height: 1.2em;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & * {
+      transition: all 0.2s ease;
+    }
+    &:hover .top-authors__description {
+      top: 60px;
+    }
+  }
+  &__img {
+    width: 60%;
+    vertical-align: top;
+  }
+  &__description {
+    position: absolute;
+    top: calc(84%);
+    width: 100%;
+    background-color: var(--background-secondary);
+    padding: 7px 10px 25px;
+    &:before {
+      position: absolute;
+      content: '';
+      z-index: 2;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background-image: -webkit-linear-gradient(
+        top,
+        transparent 0%,
+        var(--background-secondary) 100%
+      );
+      background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--background-secondary) 100%
+      );
+    }
+  }
+  &__name {
+    @include mixins.margin-bottom;
+    font-weight: 300;
+    font-size: 1.3em;
+    line-height: 1.1em;
+    font-family: 'Oswald', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__text {
+    @include mixins.margin-bottom;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 0.6px;
+    opacity: 0.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Укажите желаемое количество строк */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Важно установить в normal, чтобы применить -webkit-line-clamp */
+  }
+  &__link {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+}

@@ -1,0 +1,215 @@
+@use '../media';
+.spinner-secondary {
+  margin: 20rem auto;
+  width: 50rem;
+  text-align: center;
+  @include media.large-mobile {
+    width: 30rem;
+  }
+  &__spinner {
+    width: 200px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #fdeedc 94%, #0000) top/8px 8px
+        no-repeat,
+      conic-gradient(#0000 30%, var(--background-main));
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 8px),
+      #000 0
+    );
+    animation: s3 1s infinite linear;
+  }
+  &__message {
+    height: 1.5em;
+    position: relative;
+    text-align: center;
+    margin-top: 10rem;
+  }
+  &__message__line {
+    animation: message-fade-in-out 5s linear;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--background-main);
+    &:nth-child(2) {
+      animation-delay: 5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 10s;
+    }
+    &:nth-child(4) {
+      animation-delay: 15s;
+    }
+    &:nth-child(5) {
+      animation-delay: 20s;
+    }
+    &:nth-child(6) {
+      animation-delay: 25s;
+    }
+    &:nth-child(7) {
+      animation-delay: 30s;
+    }
+    &:last-child {
+      animation-name: message-fade-in;
+      animation-delay: 35s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+  }
+  6%,
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes message-fade-in-out {
+  from,
+  to {
+    opacity: 0;
+  }
+  6%,
+  94% {
+    opacity: 1;
+  }
+}
+
+@keyframes s3 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.main-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fef6ee;
+  &.active {
+    display: none;
+  }
+  &__spinner {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20rem;
+    width: 20rem;
+    z-index: 2000;
+    background-color: var(--color-orange-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    perspective: 1000px;
+    &.active {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      background: #f5f5f5 no-repeat;
+      background-size: 60px 10px;
+      background-image: linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0);
+
+      background-position: 15px 30px, 15px 60px, 15px 90px, 105px 30px,
+        105px 60px, 105px 90px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(50% - 10px);
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      background: #fff no-repeat;
+      background-size: 60px 10px;
+      background-image: linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0),
+        linear-gradient(#ddd 100px, transparent 0);
+      background-position: 50% 30px, 50% 60px, 50% 90px;
+      transform: rotateY(0deg);
+      transform-origin: left center;
+      animation: paging 1s linear infinite;
+    }
+  }
+  &__text {
+    color: var(--color-orange-tertiary);
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    position: absolute;
+    top: calc(
+      30% + 15rem
+    ); /* Отступ от верха на половину высоты .main-spinner */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001; /* Поверх .main-spinner */
+
+    &:after {
+      position: absolute;
+      content: '';
+      -webkit-animation: Dots 2s cubic-bezier(0, 0.39, 1, 0.68) infinite;
+      animation: Dots 2s cubic-bezier(0, 0.39, 1, 0.68) infinite;
+    }
+  }
+}
+
+@keyframes paging {
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+@-webkit-keyframes Dots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}
+
+@keyframes Dots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}

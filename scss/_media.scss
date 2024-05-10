@@ -1,0 +1,74 @@
+$xlarge-desktop: 1440px;
+$large-desktop: 1200px;
+$medium-desktop: 992px;
+$large-tablet: 1024px;
+$medium-tablet: 800px;
+$small-tablet: 600px;
+$large-mobile: 480px;
+$premedium-mobile: 400px;
+$medium-mobile: 360px;
+$small-mobile: 320px;
+// Медиа-запросы в формате @mixin mobile
+@mixin xlarge-desktop {
+  @media (max-width: $xlarge-desktop) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (max-width: $large-desktop) {
+    @content;
+  }
+}
+
+@mixin medium-desktop {
+  @media (max-width: $medium-desktop) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (max-width: $small-desktop) {
+    @content;
+  }
+}
+
+@mixin large-tablet {
+  @media (max-width: $large-tablet) {
+    @content;
+  }
+}
+
+@mixin medium-tablet {
+  @media (max-width: $medium-tablet) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: $small-tablet) {
+    @content;
+  }
+}
+
+@mixin large-mobile {
+  @media (max-width: $large-mobile) {
+    @content;
+  }
+}
+@mixin premedium-mobile {
+  @media (max-width: $premedium-mobile) {
+    @content;
+  }
+}
+@mixin medium-mobile {
+  @media (max-width: $medium-mobile) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: $small-mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,207 @@
+@use 'variables';
+.dark-theme {
+  .body-wrapper {
+    // overflow: hidden;
+    // width: 100%;
+    // position: relative;
+    background-color: var(--color-dark-theme-black-2);
+  }
+
+  .container {
+    background: var(--color-dark-theme-gray-1);
+  }
+  .sidebar,
+  section,
+  .header,
+  .menu {
+    background-color: var(--color-dark-theme-black-1);
+  }
+  .nav__btn {
+    color: var(--color-dark-theme-white-1);
+    &:hover {
+      color: var(--color-orange-dark);
+    }
+  }
+  .search__input {
+    background-color: var(--color-dark-theme-gray-1);
+    color: var(--color-dark-theme-white-1) !important;
+    &::placeholder {
+      color: var(--color-dark-theme-gray-2) !important;
+    }
+    &:focus {
+      box-shadow: -1px 9px 30px -10px rgba(255, 255, 255, 0.74);
+    }
+  }
+  .top-authors__description {
+    background-color: var(--color-dark-theme-orage-1);
+    &:before {
+      background-image: -webkit-linear-gradient(
+        top,
+        transparent 0%,
+        var(--color-dark-theme-orage-1) 100%
+      );
+      background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-dark-theme-orage-1) 100%
+      );
+    }
+  }
+  .books__item {
+    background-color: var(--color-dark-theme-gray-1);
+  }
+  #autoComplete_list_1 > li {
+    background-color: var(--color-dark-theme-gray-1);
+    color: var(--color-dark-theme-white-1);
+  }
+  #autoComplete_list_1 {
+    background-color: var(--color-dark-theme-gray-1);
+  }
+  .books__description {
+    color: var(--color-dark-theme-white-1);
+  }
+  .choices__list {
+    background-color: var(--color-dark-theme-gray-1);
+    &--dropdown {
+      border: none;
+    }
+  }
+  .choices__inner {
+    background-color: var(--color-dark-theme-gray-1);
+    border: none;
+  }
+  .choices__placeholder {
+    color: var(--color-dark-theme-white-1);
+  }
+  .search-results__title {
+    color: lighten($color: #c06014, $amount: 7);
+  }
+  .book-card {
+    background: var(--color-dark-theme-black-1);
+    color: var(--color-dark-theme-white-1);
+  }
+  .book-card__description {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book__icon-back {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book-card__rating {
+    background-color: var(--color-dark-theme-gray-1);
+
+    box-shadow: 4px 7px 45px -26px rgba(0, 0, 0, 1);
+  }
+  .book-card__star {
+    color: var(--color-gold);
+  }
+  .book-card__link {
+    &:link,
+    &:visited {
+      color: var(--color-orange-tertiary);
+    }
+    &:hover,
+    &:active {
+      color: var(--color-orange-secondary);
+      border-bottom: 1px solid var(--color-orange-secondary);
+    }
+  }
+
+  .book {
+    background-color: var(--color-dark-theme-black-1);
+  }
+  .book__details {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book__pretext {
+    color: var(--color-orange-tertiary);
+  }
+  .book__tabs-btn {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book__subtitle {
+    color: var(--color-dark-theme-gray-2);
+  }
+  .book__tabs-content-title {
+    color: var(--color-orange-tertiary);
+  }
+
+  .book__table {
+    color: var(--color-dark-theme-white-1);
+    tr {
+      &:nth-child(odd) {
+        background-color: var(--color-dark-theme-gray-3);
+      }
+      &:nth-child(even) {
+        background-color: darken($color: #ffa500, $amount: 10);
+      }
+    }
+  }
+
+  .book__table-text {
+    color: var(--color-dark-theme-white-1);
+    color: darken($color: #dde6ed, $amount: 3);
+  }
+  .book__text {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book__rating-average {
+    background-color: var(--color-orange-tertiary);
+  }
+  .book__progress {
+    background-color: var(--color-dark-theme-gray-4);
+  }
+  .book__rating-value,
+  .book__rating-value-number {
+    color: var(--color-dark-theme-white-1);
+  }
+  .book__bar {
+    color: var(--color-dark-theme-yellow-1);
+  }
+
+  .active-tab {
+    color: var(--color-orange-tertiary);
+  }
+  .swiper-scrollbar {
+    background-color: var(--color-orange-tertiary);
+  }
+  .custom-scrollbar-drag {
+    background-color: darken($color: #ffff00, $amount: 3) !important;
+  }
+  .modal-favorite {
+    background-color: var(--color-dark-theme-black-1);
+  }
+  .modal-settings {
+    background-color: var(--color-dark-theme-black-1);
+  }
+
+  .header__burger-stick {
+    background-color: var(--color-dark-theme-white-1);
+  }
+  .close-modal {
+    color: var(--color-dark-theme-white-1);
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+  .checkbox__inner,
+  .mobile-select__text {
+    color: var(--color-dark-theme-white-1);
+  }
+  // .menu {
+  //   background-color: ;
+  // }
+  .main-spinner {
+    background-color: var(--color-dark-theme-black-1);
+  }
+  .pagination__btn {
+    background-color: var(--color-dark-theme-black-1);
+    color: var(--color-dark-theme-white-1);
+    border-color: var(--color-dark-theme-white-1);
+  }
+  .pagination__arrow {
+    color: var(--color-dark-theme-white-1);
+  }
+  .reccomended__title {
+    color: var(--color-orange-quaternary);
+  }
+}

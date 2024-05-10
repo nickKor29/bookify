@@ -1,0 +1,52 @@
+@use 'fonts';
+:root {
+  --background-main: #fdeedc;
+  --background-secondary: #fef5ed;
+  --background-tertiary: #fff4e6;
+  --background-quaternary: #ffedd6;
+  --background-fivefold: #ffef99;
+  --color-btn: #fea82f;
+  --color-highlight: #ff8a08;
+  --gradient-container: linear-gradient(
+    90deg,
+    rgba(255, 169, 77, 1) 44%,
+    rgba(237, 125, 49, 1) 100%
+  );
+  --gradient-book-card: linear-gradient(
+    90deg,
+    rgba(254, 245, 237, 1) 37%,
+    rgba(253, 238, 220, 1) 100%
+  );
+  --color-orange-tertiary: #ffa500;
+  --color-orange-secondary: #e69500;
+  --color-orange-primary: #fda403;
+  --color-orange-quaternary: #dd8f00;
+  --color-orange-dark: #ed7d31;
+  --color-yellow: #fcc419;
+  --color-yellow-light: #fbbf24;
+  --color-yellow-dark: #f59e0b;
+  --color-yellow-darker: #e09a1a;
+  --color-gold: #ffd700;
+  --color-light-1: #ffc288;
+  --color-gray: #444;
+  --color-gray-light: #777;
+  --color-gray-darker: #333;
+  --color-gray-secondary: #868e96;
+  --color-gray-tertiary: #fff8;
+  --color-gray-quaternary: #adb5bd;
+  --color-gray-fivefold: #495057;
+  --color-red: #ff0000;
+  --color-dark-theme-gray-1: #393e46;
+  --color-dark-theme-gray-2: #a9a9a9;
+  --color-dark-theme-gray-3: #374045;
+  --color-dark-theme-gray-4: #3a4750;
+  --color-dark-theme-black-1: #222831;
+  --color-dark-theme-black-2: #171717;
+  --color-dark-theme-white-1: #dde6ed;
+  --color-dark-theme-orage-1: #c06014;
+  --color-dark-theme-yellow-1: #facc15;
+
+  --color-black: #000;
+  --color-black-2: #141414;
+  --color-white: #fff;
+}

@@ -1,0 +1,77 @@
+@use '../variables';
+@use '../media';
+@use '../mixins';
+.top-books {
+  grid-row: 2/3;
+  padding: 0 1.5rem 2rem 1.5rem;
+  overflow: hidden;
+  // height: 100%;
+  width: 100%;
+  @include mixins.rounded-box;
+}
+.books {
+  &__list {
+    display: flex;
+    // gap: 3.5rem;
+    margin-left: 2rem;
+    flex-wrap: nowrap;
+    padding: 2rem 0;
+  }
+  &__item {
+    min-width: 19rem;
+    background-color: #fef6ee;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    height: 30rem;
+  }
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Укажите желаемое количество строк */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Важно установить в normal, чтобы применить -webkit-line-clamp */
+    font-weight: 600;
+  }
+  &__book {
+    position: relative;
+    min-width: 10rem;
+    max-width: 15rem;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__img {
+    min-width: 100%;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+  }
+  &__description {
+    margin-top: 1rem;
+    color: #444;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 800 !important;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bookify is your ultimate destination for browsing and discovering books. Dive into our extensive catalog and uncover hidden literary gems."
+    />
+    <link rel="icon" href="img/icons8-ibooks-512.png" />
+    <link rel="apple-touch-icon" href="img/icons8-ibooks-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script type="module" src="js/controller.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Bookify &mdash; Your Digital Library</title>
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <div class="container">
+        <header class="header">
+          <!-- Контейнер для автозаполнения -->
+          <a class="logo mobile-logo" href="#">
+            <img class="logo__img logo__img-light" src="img/logo.png" alt="" />
+            <img
+              class="logo__img logo__img--dark hidden"
+              src="img/logo-dark.png"
+              alt=""
+            />
+          </a>
+          <form class="search" action="#">
+            <input
+              class="search__input"
+              id="search-book"
+              type="text"
+              dir="ltr"
+              maxlength="100"
+              tabindex="1"
+            />
+            <label class="search__label" for="search-book"
+              ><svg
+                class="search__label-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+              >
+                <path
+                  d="M792-120.67 532.67-380q-30 25.33-69.64 39.67Q423.39-326 378.67-326q-108.44 0-183.56-75.17Q120-476.33 120-583.33t75.17-182.17q75.16-75.17 182.5-75.17 107.33 0 182.16 75.17 74.84 75.17 74.84 182.27 0 43.23-14 82.9-14 39.66-40.67 73l260 258.66-48 48Zm-414-272q79.17 0 134.58-55.83Q568-504.33 568-583.33q0-79-55.42-134.84Q457.17-774 378-774q-79.72 0-135.53 55.83-55.8 55.84-55.8 134.84t55.8 134.83q55.81 55.83 135.53 55.83Z"
+                />
+              </svg>
+            </label>
+            <button class="search__btn">
+              <svg
+                class="search__btn-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+              >
+                <path
+                  d="M792-120.67 532.67-380q-30 25.33-69.64 39.67Q423.39-326 378.67-326q-108.44 0-183.56-75.17Q120-476.33 120-583.33t75.17-182.17q75.16-75.17 182.5-75.17 107.33 0 182.16 75.17 74.84 75.17 74.84 182.27 0 43.23-14 82.9-14 39.66-40.67 73l260 258.66-48 48Zm-414-272q79.17 0 134.58-55.83Q568-504.33 568-583.33q0-79-55.42-134.84Q457.17-774 378-774q-79.72 0-135.53 55.83-55.8 55.84-55.8 134.84t55.8 134.83q55.81 55.83 135.53 55.83Z"
+                />
+              </svg>
+              <span class="search__btn-text"> Search</span>
+            </button>
+          </form>
+          <div class="select-box">
+            <select class="search-type">
+              <option value="">Select an option</option>
+              <option value="author">By author</option>
+              <option value="title">By title</option>
+              <option value="keywords">By keywords</option>
+            </select>
+            <select class="lang-type">
+              <option value="">Select language</option>
+              <option value="any">Any language</option>
+              <option value="en">English</option>
+              <option value="ru">Russian</option>
+              <option value="fr">French</option>
+            </select>
+          </div>
+          <button class="header__burger-btn">
+            <span class="header__burger-stick"></span
+            ><span class="header__burger-stick"></span
+            ><span class="header__burger-stick"></span>
+          </button>
+        </header>
+
+        <aside class="sidebar">
+          <div class="menu">
+            <a class="logo" href="#">
+              <img
+                class="logo__img logo__img--light"
+                src="img/logo.png"
+                alt=""
+              />
+              <img
+                class="logo__img logo__img--dark hidden"
+                src="img/logo-dark.png"
+                alt=""
+              />
+            </a>
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <button class="nav__btn nav-home">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      class="nav__btn-icon"
+                    >
+                      <path
+                        xmlns="http://www.w3.org/2000/svg"
+                        d="M226.67-186.67h140v-246.66h226.66v246.66h140v-380L480-756.67l-253.33 190v380ZM160-120v-480l320-240 320 240v480H526.67v-246.67h-93.34V-120H160Zm320-352Z"
+                      />
+                    </svg>
+                    Home
+                  </button>
+                </li>
+                <li class="nav__item">
+                  <button class="nav__btn nav-search">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      class="nav__btn-icon"
+                    >
+                      <path
+                        xmlns="http://www.w3.org/2000/svg"
+                        d="M792-120.67 532.67-380q-30 25.33-69.64 39.67Q423.39-326 378.67-326q-108.44 0-183.56-75.17Q120-476.33 120-583.33t75.17-182.17q75.16-75.17 182.5-75.17 107.33 0 182.16 75.17 74.84 75.17 74.84 182.27 0 43.23-14 82.9-14 39.66-40.67 73l260 258.66-48 48Zm-414-272q79.17 0 134.58-55.83Q568-504.33 568-583.33q0-79-55.42-134.84Q457.17-774 378-774q-79.72 0-135.53 55.83-55.8 55.84-55.8 134.84t55.8 134.83q55.81 55.83 135.53 55.83Z"
+                      />
+                    </svg>
+                    Search
+                  </button>
+                </li>
+                <li class="nav__item">
+                  <button class="nav__btn nav-favorite">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                      class="nav__btn-icon"
+                    >
+                      <path
+                        xmlns="http://www.w3.org/2000/svg"
+                        d="m480-120.67-46.67-42q-104.18-95.08-172.25-164.04Q193-395.67 152.67-450.17q-40.34-54.5-56.5-99.16Q80-594 80-640q0-91.44 61.33-152.72 61.34-61.28 152-61.28 55.34 0 103.34 25.33 48 25.34 83.33 72.67 39.33-49.33 86.33-73.67 47-24.33 100.34-24.33 90.66 0 152 61.28Q880-731.44 880-640q0 46-16.17 90.67-16.16 44.66-56.5 99.16-40.33 54.5-108.41 123.46-68.07 68.96-172.25 164.04l-46.67 42Zm0-88.66q99.49-90.67 163.75-155.5Q708-429.67 745.67-478.17q37.66-48.5 52.66-86.42t15-75.31q0-64.1-41.33-105.77-41.33-41.66-105.18-41.66-50.02 0-92.59 29.83-42.56 29.83-65.56 81.5h-58q-22.34-51-64.9-81.17-42.57-30.16-92.59-30.16-63.85 0-105.18 41.66-41.33 41.67-41.33 105.88 0 37.46 15 75.62 15 38.17 52.66 87Q252-428.33 316.67-363.83q64.66 64.5 163.33 154.5Zm0-289Z"
+                      />
+                    </svg>
+                    My Books
+                  </button>
+                </li>
+                <li class="nav__item">
+                  <button class="nav__btn nav-settings">
+                    <svg
+                      class="nav__btn-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -960 960 960"
+                    >
+                      <path
+                        xmlns="http://www.w3.org/2000/svg"
+                        d="m382-80-18.67-126.67q-17-6.33-34.83-16.66-17.83-10.34-32.17-21.67L178-192.33 79.33-365l106.34-78.67q-1.67-8.33-2-18.16-.34-9.84-.34-18.17 0-8.33.34-18.17.33-9.83 2-18.16L79.33-595 178-767.67 296.33-715q14.34-11.33 32.34-21.67 18-10.33 34.66-16L382-880h196l18.67 126.67q17 6.33 35.16 16.33 18.17 10 31.84 22L782-767.67 880.67-595l-106.34 77.33q1.67 9 2 18.84.34 9.83.34 18.83 0 9-.34 18.5Q776-452 774-443l106.33 78-98.66 172.67-118-52.67q-14.34 11.33-32 22-17.67 10.67-35 16.33L578-80H382Zm55.33-66.67h85l14-110q32.34-8 60.84-24.5T649-321l103.67 44.33 39.66-70.66L701-415q4.33-16 6.67-32.17Q710-463.33 710-480q0-16.67-2-32.83-2-16.17-7-32.17l91.33-67.67-39.66-70.66L649-638.67q-22.67-25-50.83-41.83-28.17-16.83-61.84-22.83l-13.66-110h-85l-14 110q-33 7.33-61.5 23.83T311-639l-103.67-44.33-39.66 70.66L259-545.33Q254.67-529 252.33-513 250-497 250-480q0 16.67 2.33 32.67 2.34 16 6.67 32.33l-91.33 67.67 39.66 70.66L311-321.33q23.33 23.66 51.83 40.16 28.5 16.5 60.84 24.5l13.66 110Zm43.34-200q55.33 0 94.33-39T614-480q0-55.33-39-94.33t-94.33-39q-55.67 0-94.5 39-38.84 39-38.84 94.33t38.84 94.33q38.83 39 94.5 39ZM480-480Z"
+                      />
+                    </svg>
+                    Settings
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <footer class="footer">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__link" href="#">About</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Support</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link" href="#">Team & Condition</a>
+                </li>
+              </ul>
+            </footer>
+          </div>
+        </aside>
+        <main class="main"></main>
+      </div>
+    </div>
+
+    <div class="main-spinner">
+      <div class="main-spinner__spinner"></div>
+      <div class="main-spinner__text">Bookify is loading</div>
+    </div>
+
+    <div class="modal modal-favorite hidden"></div>
+    <div class="modal modal-settings hidden">
+      <button class="close-modal">&times;</button>
+      <label class="checkbox" for="checkbox">
+        <input class="checkbox__inp" type="checkbox" id="checkbox" />
+        <span class="checkbox__inner">Theme</span>
+      </label>
+      <div class="mobile-select-wrapper">
+        <div class="mobile-select">
+          <span class="mobile-select__text mobile-select__text--1"
+            >Customize search</span
+          >
+          <select class="mob search-type search-type--mobile">
+            <option value="author">By author</option>
+            <option value="title">By title</option>
+            <option value="keywords" selected>By keywords</option>
+          </select>
+        </div>
+        <div class="mobile-select">
+          <span class="mobile-select__text mobile-select__text--2"
+            >Result language</span
+          >
+          <select class="mob lang-type lang-type--mobile">
+            <option value="any" selected>Any language</option>
+            <option value="en">English</option>
+            <option value="ru">Russian</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

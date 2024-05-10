@@ -1,0 +1,29 @@
+.pagination {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  grid-row: 2/3;
+  align-self: start;
+  margin: 0 auto;
+  &__btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--background-main);
+    border: 2px solid var(--color-btn);
+    font-size: 1.7rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    &--prev {
+      grid-column: 1/2;
+    }
+    &--next {
+      grid-column: 2/3;
+    }
+  }
+  &__arrow {
+    font-size: 2rem;
+    color: var(--color-orange-dark);
+  }
+}

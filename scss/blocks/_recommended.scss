@@ -1,0 +1,27 @@
+@use '../mixins';
+@use '../media';
+@use '../variables';
+.reccomended {
+  grid-row: 3/4;
+  padding: 0 1.5rem 2rem 1.5rem;
+  width: 100%;
+  @include mixins.rounded-box;
+  width: 100%;
+
+  overflow: hidden;
+  height: 100%;
+  &__title {
+    color: var(--color-gray);
+  }
+  &__text {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--color-gray);
+    @include media.small-tablet {
+      font-size: 1.8rem;
+    }
+    @include media.large-mobile {
+      text-align: center;
+    }
+  }
+}

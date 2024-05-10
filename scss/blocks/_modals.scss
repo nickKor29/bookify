@@ -1,0 +1,135 @@
+@use '../media';
+@use '../variables';
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: var(--color-gray-darker);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: var(--background-main);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  &-settings {
+    width: 50%;
+    @include media.medium-tablet {
+      width: 90%;
+    }
+  }
+  &-favorite {
+    @include media.xlarge-desktop {
+      width: 90%;
+    }
+  }
+}
+.favorite-slide {
+  text-align: center;
+  font-size: 15px;
+  background: var(--color-white);
+  // height: calc((100% - 30px) / 2) !important;
+  height: 30rem !important;
+  // width: 28rem !important;
+  /* Center slide text vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2rem !important;
+  // margin-left: 3rem !important;
+  position: relative;
+}
+.favorite-delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+  z-index: 2;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mobile-select {
+  display: flex;
+  align-items: center;
+  display: none;
+  @include media.medium-tablet {
+    display: block;
+  }
+  gap: 2rem;
+  &__text {
+    font-size: 1.7rem;
+    &--2 {
+      padding-right: 1.4rem;
+    }
+  }
+}
+.mobile-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.checkbox {
+  display: inline-block;
+  margin-bottom: 3rem;
+  &__inp {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    appearance: none;
+    &:checked + .checkbox__inner::before {
+      background-color: #393e46;
+    }
+    &:checked + .checkbox__inner::after {
+      left: 20px;
+    }
+    &:focus + .checkbox__inner::before {
+      outline: 1px solid var(--color-gray-light);
+    }
+  }
+  &__inner {
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem;
+    padding: 8px;
+    padding-left: 64px;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6rem;
+      height: 3.6rem;
+      background-color: var(--color-white);
+      border-radius: 18px;
+    }
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 15px;
+      background-color: darken($color: #fbbf24, $amount: 4);
+    }
+  }
+}

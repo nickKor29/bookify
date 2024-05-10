@@ -1,0 +1,20 @@
+@use '../variables';
+.autoComplete_wrapper > ul > li mark {
+  color: var(--color-highlight);
+}
+.autoComplete_wrapper {
+  max-width: 50rem;
+  flex-grow: 1;
+  padding: 2rem;
+  padding: 2rem 2rem 2rem 0;
+  position: relative;
+  border-radius: 5px;
+}
+.autoComplete_wrapper > input {
+  padding: 2rem 2rem 2rem 3rem;
+  font-size: 1.8rem;
+}
+
+.autoComplete_wrapper {
+  width: 100%;
+}
